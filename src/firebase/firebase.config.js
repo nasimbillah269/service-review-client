@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyA6_MwysUtNbh98wsfqXYIpQ-nHi7npKF0",
-    authDomain: "special-food-service-review.firebaseapp.com",
-    projectId: "special-food-service-review",
-    storageBucket: "special-food-service-review.appspot.com",
-    messagingSenderId: "610438703765",
-    appId: "1:610438703765:web:2fc2d57959b4526fbac99c"
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase
