@@ -23,7 +23,12 @@ const Header = () => {
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/services'>Services</Link></li>
                         <li><Link to='/signup'>Sing Up</Link></li>
-                        <li><Link to='/login'>Login</Link></li>
+                        <li><Link to='/reviews'>MyReview</Link></li>
+                        {
+                            user?.uid ? <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
+                                :
+                                <li><Link to='/login'>Login</Link></li>
+                        }
 
                     </ul>
                 </div>
@@ -34,6 +39,7 @@ const Header = () => {
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/services'>Services</Link></li>
                     <li><Link to='/signup'>Sing Up</Link></li>
+                    <li><Link to='/reviews'>MyReview</Link></li>
                     {
                         user?.uid ? <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
                             :
