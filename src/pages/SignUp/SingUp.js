@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import signup from '../../../src/assets/image/signup.jpg'
 import { AuthContext } from '../../Context/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 const SingUp = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext);
@@ -21,10 +22,12 @@ const SingUp = () => {
                 const user = result.user;
                 upadateProfile(name, photoURL)
                 console.log(user);
+                toast.success('Successfully created!');
                 form.reset();
             })
             .catch(error => {
                 console.error(error)
+                toast.error(error.message);
             })
     }
 
