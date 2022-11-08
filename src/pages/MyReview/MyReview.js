@@ -1,9 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ReviewRow from './ReviewRow';
+import { toast } from 'react-hot-toast';
 
 const MyReview = () => {
     const reviews = useLoaderData();
+    const [displayReview, setDisplayReview] = useState(reviews);
+
+    const handleDelete = id => {
+        const agree = window.confirm(`Are you sure you want to delete: ${id}`);
+        if (agree) {
+            fetch(`http://localhost:5000/reviews/${id}`, {
+                method: 'DELETE',
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.deletedCount > 0) {
+                        const rimaining = displayReview.filter(review => review._id !== id)
+                        setDisplayReview(rimaining)
+                        toast.success('Successfully deleted!');
+                    }
+                })
+        }
+    }
     return (
         <div className="overflow-x-auto lg:w-9/12 mx-auto my-12">
             <table className="table w-full">
@@ -23,9 +43,10 @@ const MyReview = () => {
                 <tbody>
 
                     {
-                        reviews.map(review => <ReviewRow
+                        displayReview.map(review => <ReviewRow
                             key={review._id}
                             review={review}
+                            handleDelete={handleDelete}
                         ></ReviewRow>)
                     }
 

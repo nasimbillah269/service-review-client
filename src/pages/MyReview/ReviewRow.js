@@ -2,16 +2,15 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../Context/AuthProvider';
 import { HiOutlineTrash } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
-
-const ReviewRow = ({ review }) => {
-    const { name, email, reviewMassage, serviceId, serviceImage } = review;
+const ReviewRow = ({ review, handleDelete }) => {
+    const { _id, name, email, reviewMassage, serviceId, serviceImage } = review;
     const { user } = useContext(AuthContext);
-    console.log();
+
     return (
         <tr>
             <th>
                 <label>
-                    <Link><HiOutlineTrash className='text-2xl text-pink-800'></HiOutlineTrash></Link>
+                    <Link><HiOutlineTrash onClick={() => handleDelete(_id)} className='text-2xl text-pink-800'></HiOutlineTrash></Link>
                 </label>
             </th>
             <td>
