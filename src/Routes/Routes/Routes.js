@@ -6,6 +6,7 @@ import MyReview from "../../pages/MyReview/MyReview";
 import ServiceDetail from "../../pages/ServiceDetail/ServiceDetail";
 import Services from "../../pages/Services/Services";
 import SingUp from "../../pages/SignUp/SingUp";
+import PrivetRoute from "../PrivetRoute";
 
 const router = createBrowserRouter([
     {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/reviews',
-                element: <MyReview></MyReview>,
+                element: <PrivetRoute><MyReview></MyReview></PrivetRoute>,
                 loader: () => fetch('http://localhost:5000/reviews')
             },
             {
