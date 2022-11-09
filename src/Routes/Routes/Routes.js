@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import AddServices from "../../pages/AddServices/AddServices";
+import Blog from "../../pages/Blog/Blog";
 import Home from "../../pages/Home/Home";
 // import LimitService from "../../pages/LimitService/LimitService";
 import Login from "../../pages/Login/Login";
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
                 element: <PrivetRoute><AddServices></AddServices></PrivetRoute>
 
             },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
+            },
 
             {
                 path: '/login',
@@ -50,7 +55,6 @@ const router = createBrowserRouter([
                 element: <SingUp></SingUp>
             }
         ]
-
     }
 
 ]);
