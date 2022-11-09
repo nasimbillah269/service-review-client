@@ -24,6 +24,7 @@ const Header = () => {
                         <li><Link to='/services'>Services</Link></li>
                         <li><Link to='/signup'>Sing Up</Link></li>
                         <li><Link to='/reviews'>MyReview</Link></li>
+                        <li><Link to='/addservices'>AddServices</Link></li>
                         {
                             user?.uid ? <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
                                 :
@@ -40,6 +41,7 @@ const Header = () => {
                     <li><Link to='/services'>Services</Link></li>
                     <li><Link to='/signup'>Sing Up</Link></li>
                     <li><Link to='/reviews'>MyReview</Link></li>
+                    <li><Link to='/addservices'>AddServices</Link></li>
                     {
                         user?.uid ? <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
                             :
