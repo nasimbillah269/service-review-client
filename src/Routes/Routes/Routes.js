@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import Home from "../../pages/Home/Home";
+// import LimitService from "../../pages/LimitService/LimitService";
 import Login from "../../pages/Login/Login";
 import MyReview from "../../pages/MyReview/MyReview";
 import ServiceDetail from "../../pages/ServiceDetail/ServiceDetail";
@@ -15,7 +16,8 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch('http://localhost:5000/services/limit'),
             },
             {
                 path: '/services',
@@ -32,6 +34,12 @@ const router = createBrowserRouter([
                 element: <PrivetRoute><MyReview></MyReview></PrivetRoute>,
                 loader: () => fetch('http://localhost:5000/reviews')
             },
+            // {
+            //     path: '/limit',
+            //     element: <LimitService></LimitService>,
+            //     // loader: () => fetch('http://localhost:5000/services/limit'),
+            //     // loader: () => fetch('http://localhost:5000/services/limit'),
+            // },
             {
                 path: '/login',
                 element: <Login></Login>
