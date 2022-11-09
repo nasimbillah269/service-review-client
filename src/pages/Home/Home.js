@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
+import About from '../About/About';
 import Banner from '../Banner/Banner';
+import Customer from '../Customer/Customer';
 import SingleLimitService from '../LimitService/SingleLimitService';
 
 const Home = () => {
@@ -23,6 +25,9 @@ const Home = () => {
             <div className=' text-center my-5'>
                 <Link to='/services'><button className="btn btn-outline btn-primary w-64 ">See All</button></Link>
             </div>
+
+            <About></About>
+            <Customer></Customer>
 
         </div>
     );
