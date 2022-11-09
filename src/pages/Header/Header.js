@@ -23,10 +23,15 @@ const Header = () => {
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/services'>Services</Link></li>
                         <li><Link to='/signup'>Sing Up</Link></li>
-                        <li><Link to='/reviews'>MyReview</Link></li>
-                        <li><Link to='/addservices'>AddServices</Link></li>
+
+
                         {
-                            user?.uid ? <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
+                            user?.uid ?
+                                <>
+                                    <li><Link to='/reviews'>MyReview</Link></li>
+                                    <li><Link to='/addservices'>AddServices</Link></li>
+                                    <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
+                                </>
                                 :
                                 <li><Link to='/login'>Login</Link></li>
                         }
@@ -40,10 +45,15 @@ const Header = () => {
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/services'>Services</Link></li>
                     <li><Link to='/signup'>Sing Up</Link></li>
-                    <li><Link to='/reviews'>MyReview</Link></li>
-                    <li><Link to='/addservices'>AddServices</Link></li>
+
+
                     {
-                        user?.uid ? <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
+                        user?.uid ?
+                            <>
+                                <li><Link to='/reviews'>MyReview</Link></li>
+                                <li><Link to='/addservices'>AddServices</Link></li>
+                                <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
+                            </>
                             :
                             <li><Link to='/login'>Login</Link></li>
                     }

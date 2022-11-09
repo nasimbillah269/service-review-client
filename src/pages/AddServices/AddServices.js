@@ -12,7 +12,7 @@ const AddServices = () => {
         const image = form.image.value;
         const description = form.description.value;
 
-        console.log(name, price, rating, image, description);
+
 
         const servicesInfo = {
             name,
@@ -35,6 +35,7 @@ const AddServices = () => {
                 console.log(data);
                 if (data.acknowledged) {
                     toast.success('Successfully');
+                    form.reset();
 
                 }
             })
