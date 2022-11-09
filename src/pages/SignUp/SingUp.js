@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import signup from '../../../src/assets/image/signup.jpg'
 import { AuthContext } from '../../Context/AuthProvider';
 import { toast } from 'react-hot-toast';
+import useTitle from '../../hooks/useTitle';
 
 const SingUp = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext);
+    useTitle('Sign Up')
 
     const handleSubmit = event => {
         event.preventDefault()

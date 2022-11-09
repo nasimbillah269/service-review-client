@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ReviewRow from './ReviewRow';
 import { toast } from 'react-hot-toast';
+import useTitle from '../../hooks/useTitle';
 
 const MyReview = () => {
     const reviews = useLoaderData();
     const [displayReview, setDisplayReview] = useState(reviews);
+    useTitle('My Review')
 
     const handleDelete = id => {
         const agree = window.confirm(`Are you sure you want to delete: ${id}`);
