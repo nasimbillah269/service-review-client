@@ -3,6 +3,7 @@ import { Link, useLoaderData, } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import { HiStar } from "react-icons/hi";
 
 const ServiceDetail = () => {
     const serviceDetails = useLoaderData()
@@ -60,7 +61,14 @@ const ServiceDetail = () => {
                         <p>{description}</p>
                         <div className='flex justify-end'>
                             <p className='text-1xl font-bold'>${price}</p>
-                            <p className='text-1xl font-bold'>{rating}</p>
+                            <div className='flex'>
+                                <p className='mr-2 font-bold'>{rating}</p>
+                                <p className='text-yellow-300 mt-1'><HiStar></HiStar></p>
+                                <p className='text-yellow-300 mt-1' ><HiStar></HiStar></p>
+                                <p className='text-yellow-300 mt-1'><HiStar></HiStar></p>
+                                <p className='text-yellow-300 mt-1'><HiStar></HiStar></p>
+                                <p className='text-yellow-300 mt-1'><HiStar></HiStar></p>
+                            </div>
                         </div>
 
                     </div>

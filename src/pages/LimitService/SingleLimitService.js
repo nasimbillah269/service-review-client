@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import { HiStar } from "react-icons/hi";
 
 const SingleLimitService = ({ service }) => {
     const { _id, name, price, rating, image, description } = service;
@@ -14,8 +15,15 @@ const SingleLimitService = ({ service }) => {
             <div className="card-body">
                 <h2 className="card-title m-0">{name}</h2>
                 <div className='flex justify-end'>
-                    <p>${price}</p>
-                    <p>{rating}</p>
+                    <p className='font-bold'>${price}</p>
+                    <div className='flex'>
+                        <p className='mr-2 font-bold'>{rating}</p>
+                        <p className='text-yellow-300 mt-1'><HiStar></HiStar></p>
+                        <p className='text-yellow-300 mt-1' ><HiStar></HiStar></p>
+                        <p className='text-yellow-300 mt-1'><HiStar></HiStar></p>
+                        <p className='text-yellow-300 mt-1'><HiStar></HiStar></p>
+                        <p className='text-yellow-300 mt-1'><HiStar></HiStar></p>
+                    </div>
                 </div>
                 <p>{description.slice(0, 100)}...</p>
                 <div className="card-actions justify-end">

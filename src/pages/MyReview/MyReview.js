@@ -33,7 +33,7 @@ const MyReview = () => {
                     <tr>
                         <th>
                             <label>
-                                <input type="checkbox" className="checkbox" />
+
                             </label>
                         </th>
                         <th>Service Name</th>
@@ -44,12 +44,16 @@ const MyReview = () => {
                 </thead>
                 <tbody>
 
+
                     {
-                        displayReview.map(review => <ReviewRow
-                            key={review._id}
-                            review={review}
-                            handleDelete={handleDelete}
-                        ></ReviewRow>)
+                        reviews.length > 0 ?
+                            displayReview.map(review => <ReviewRow
+                                key={review._id}
+                                review={review}
+                                handleDelete={handleDelete}
+                            ></ReviewRow>)
+                            :
+                            <p className='text-center text-2xl font-bold'>No reviews were added</p>
                     }
 
                 </tbody>
