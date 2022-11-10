@@ -5,8 +5,10 @@ import Service from './Service';
 
 const Services = () => {
     const services = useLoaderData();
+
     useTitle('Services')
     return (
+
         <div className='container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-5 my-12'>
             {/* <h3>{services.length}</h3> */}
             {

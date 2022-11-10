@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <h2 className='text-4xl font-bold text-center my-4'>Service</h2>
+            <h2 className='text-4xl font-bold text-center my-4 text-rose-700'>Service</h2>
             <div className='container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-5'>
                 {
                     services.map(service => <SingleLimitService
