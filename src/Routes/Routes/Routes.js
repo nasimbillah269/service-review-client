@@ -20,22 +20,22 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/services/limit'),
+                loader: () => fetch('https://service-review-server-khaki.vercel.app/services/limit'),
             },
             {
                 path: '/services',
                 element: <Services></Services>,
-                loader: () => fetch('http://localhost:5000/services')
+                loader: () => fetch('https://service-review-server-khaki.vercel.app/services')
             },
             {
                 path: '/services/:_id',
                 element: <ServiceDetail></ServiceDetail>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params._id}`)
+                loader: ({ params }) => fetch(`https://service-review-server-khaki.vercel.app/services/${params._id}`)
             },
             {
                 path: '/reviews',
                 element: <PrivetRoute><MyReview></MyReview></PrivetRoute>,
-                loader: () => fetch('http://localhost:5000/reviews')
+                loader: () => fetch('https://service-review-server-khaki.vercel.app/reviews')
             },
             {
                 path: '/addservices',
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
             {
                 path: '/updatereview/:_id',
                 element: <UpdateReview></UpdateReview>,
-                loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params._id}`)
+                loader: ({ params }) => fetch(`https://service-review-server-khaki.vercel.app/reviews/${params._id}`)
 
             },
 

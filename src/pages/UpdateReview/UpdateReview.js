@@ -12,7 +12,7 @@ const UpdateReview = () => {
     const handleUpadate = event => {
         event.preventDefault()
         console.log(update);
-        fetch(`http://localhost:5000/reviews/${_id}`, {
+        fetch(`https://service-review-server-khaki.vercel.app/reviews/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
