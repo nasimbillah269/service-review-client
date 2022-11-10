@@ -3,6 +3,7 @@ import signup from '../../../src/assets/image/signup.jpg'
 import { AuthContext } from '../../Context/AuthProvider';
 import { toast } from 'react-hot-toast';
 import useTitle from '../../hooks/useTitle';
+import { Link } from 'react-router-dom';
 
 const SingUp = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext);
@@ -84,6 +85,7 @@ const SingUp = () => {
 
                             </label>
                         </div>
+                        <p><small>Have an allreday account please? <Link to='/login'>Login</Link></small></p>
                         <div className="form-control mt-6">
                             <input className="btn btn-primary" type="submit" value="Sign Up" />
                         </div>
