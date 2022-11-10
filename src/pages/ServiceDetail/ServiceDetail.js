@@ -21,12 +21,16 @@ const ServiceDetail = () => {
         const serviceId = form.serviceId.value;
         const serviceImage = form.serviceImage.value;
         const reviewMassage = form.massage.value;
+        const userName = form.userName.value;
+        const photoURL = form.photoURL.value;
 
-        console.log(name, email, serviceId, serviceImage, reviewMassage);
+        console.log(name, email, serviceId, serviceImage, reviewMassage, userName, photoURL);
 
         const reviewInfo = {
             name,
             email,
+            userName,
+            photoURL,
             serviceId,
             serviceImage,
             reviewMassage
@@ -77,6 +81,10 @@ const ServiceDetail = () => {
             {
                 user?.uid ? <form onSubmit={handleReview} className='bg-base-100 lg:w-9/12 p-8 mt-4 mb-4 lg:mx-auto shadow-2xl'>
                     <h1 className='text-4xl text-center'>Review</h1>
+                    <p>Your Name*</p>
+                    <input type="text" name="userName" defaultValue={user?.displayName} readOnly placeholder="Enter Your Name" className="input input-bordered input-info w-full my-4" />
+                    <p>PhotoURL*</p>
+                    <input type="text" name="photoURL" placeholder="photoURL" defaultValue={user?.photoURL} readOnly className="input input-bordered input-info w-full my-4" />
                     <p>Service Name*</p>
                     <input type="text" name="name" defaultValue={name} readOnly placeholder="Enter Your Name" className="input input-bordered input-info w-full my-4" />
                     <p>Email*</p>

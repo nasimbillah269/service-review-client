@@ -4,10 +4,32 @@ import ReviewRow from './ReviewRow';
 import { toast } from 'react-hot-toast';
 import useTitle from '../../hooks/useTitle';
 
+
 const MyReview = () => {
     const reviews = useLoaderData();
     const [displayReview, setDisplayReview] = useState(reviews);
+    // const { user, logOut } = useContext(AuthContext);
+    // const [userReviews, setUserReviews] = useState([]);
+
     useTitle('My Review')
+
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/reviews?email=${user.email}`, {
+    //         headers: {
+    //             authorization: `Bearer ${localStorage.getItem('reviews-token')}`
+    //         }
+    //     })
+    //         .then(res => {
+    //             if (res.status === 401 || res.status === 403) {
+    //                 logOut()
+    //             }
+    //             return res.json()
+    //         })
+    //         .then(data => {
+    //             setDisplayReview(data)
+
+    //         })
+    // }, [user?.email])
 
     const handleDelete = id => {
         const agree = window.confirm(`Are you sure you want to delete: ${id}`);

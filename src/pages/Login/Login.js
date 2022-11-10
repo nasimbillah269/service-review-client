@@ -27,11 +27,12 @@ const Login = () => {
 
         signIn(email, password)
             .then(result => {
-                const user = result.user
-                console.log(user);
+                const user = result.user;
+                console.log(user)
                 form.reset();
                 toast.success('Successfully');
                 navigate(from, { replace: true });
+
             })
             .catch(error => {
                 console.error(error)
