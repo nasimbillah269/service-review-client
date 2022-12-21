@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/services/:_id',
-                element: <ServiceDetail></ServiceDetail>,
+                element: <PrivetRoute><ServiceDetail></ServiceDetail></PrivetRoute>,
                 loader: ({ params }) => fetch(`https://service-review-server-khaki.vercel.app/services/${params._id}`)
             },
             {

@@ -3,11 +3,16 @@ import signup from '../../../src/assets/image/signup.jpg'
 import { AuthContext } from '../../Context/AuthProvider';
 import { toast } from 'react-hot-toast';
 import useTitle from '../../hooks/useTitle';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const SingUp = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext);
     useTitle('Sign Up')
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -26,6 +31,7 @@ const SingUp = () => {
                 upadateProfile(name, photoURL)
                 console.log(user);
                 toast.success('Successfully created!');
+                navigate(from, { replace: true });
                 form.reset();
             })
             .catch(error => {
@@ -51,7 +57,7 @@ const SingUp = () => {
     }
 
     return (
-        <div className="hero min-h-screen lg:w-9/12 p-8 my-12 mx-auto bg-base-200">
+        <div className="hero min-h-screen lg:w-9/12 p-8 my-12 mx-auto ">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 <div className="">
                     <img className='rounded-2xl shadow-2xl h-full' src={signup} alt="" />

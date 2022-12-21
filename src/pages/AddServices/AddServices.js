@@ -1,10 +1,11 @@
 import React from 'react';
 import { toast } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
 
 const AddServices = () => {
     useTitle('AddServices')
-
+    const navigate = useNavigate();
     const handleAddService = event => {
         event.preventDefault()
         const form = event.target;
@@ -37,6 +38,7 @@ const AddServices = () => {
                 console.log(data);
                 if (data.acknowledged) {
                     toast.success('Successfully');
+                    navigate('/services')
                     form.reset();
 
                 }

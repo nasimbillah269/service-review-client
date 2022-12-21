@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 
 const UpdateReview = () => {
@@ -7,6 +7,7 @@ const UpdateReview = () => {
     const { _id, email, name, photoURL, serviceImage, reviewMassage,
         userName } = storedReview;
     const [update, setUpdate] = useState(storedReview);
+    const navigate = useNavigate();
 
     console.log(storedReview);
     const handleUpadate = event => {
@@ -24,6 +25,7 @@ const UpdateReview = () => {
             .then(data => {
                 if (data.acknowledged) {
                     toast.success('Successfully');
+                    navigate('/reviews')
 
                 }
 

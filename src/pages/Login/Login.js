@@ -57,7 +57,7 @@ const Login = () => {
     }
 
     return (
-        <div className="hero min-h-screen lg:w-9/12 p-8 my-12  mx-auto bg-base-200">
+        <div className="hero min-h-screen lg:w-9/12 p-8 my-12  mx-auto ">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 <div className="">
                     <img className='rounded-2xl shadow-2xl h-full' src={signup} alt="" />

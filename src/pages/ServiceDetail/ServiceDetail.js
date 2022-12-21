@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
-import { Link, useLoaderData, } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate, } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { HiStar } from "react-icons/hi";
+import { toast } from 'react-hot-toast';
 
 const ServiceDetail = () => {
     const serviceDetails = useLoaderData()
@@ -11,6 +12,7 @@ const ServiceDetail = () => {
     useTitle('Service detail')
     console.log(serviceDetails);
     const { _id, name, price, rating, image, description } = serviceDetails;
+    const navigate = useNavigate();
 
     const handleReview = event => {
         event.preventDefault()
@@ -46,6 +48,8 @@ const ServiceDetail = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                toast.success('Successfully Review!');
+                navigate('/reviews')
             })
     }
 
